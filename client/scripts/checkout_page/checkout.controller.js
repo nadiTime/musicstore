@@ -2,15 +2,14 @@
 	'use strict';
 
 	angular.module('musicstore.checkout')
-		.controller('CheckoutController' , ['$scope' , '$rootScope' , 'CheckoutFactory' , 'GeneralFactory' ,
-			function($scope,$rootScope,CheckoutFactory,GeneralFactory){
+		.controller('CheckoutController' , ['$scope' , '$rootScope' , 'GeneralFactory' ,
+			function($scope,$rootScope,GeneralFactory){
 
 				var init = function(){
-					var al = GeneralFactory.getFromLS();
-					var user_id = $rootScope.user_id;
-					var user_auth = $rootScope.user_auth;
-					var amount = [3,5];
-					var albums = 
+					var cart = GeneralFactory.getFromLS('cart');
+					console.log(cart);
+
 				}; 
+				init();
 		}]);
 })();
