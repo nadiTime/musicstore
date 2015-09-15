@@ -82,4 +82,8 @@ $app->post('/order/checkout/', function() use ( $app, $send, $order ) {
 	$send($order->RCcheckoutOrder($app->request->getBody()));
 });
 
+$app->post('/order/display/', function() use ( $app, $send, $order ) { 
+	$send($order->RCcheckoutOrder($app->request->getBody()));
+});
+
 $app->run();
