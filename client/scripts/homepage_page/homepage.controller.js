@@ -8,15 +8,13 @@
         			$scope.latestAlbumsList = [];
         			$scope.newAlbums = [];
         			$scope.albumToDisplay = [];
-
+        			var assets_images = '/musicstore/assets/images/';
 	   				var init = function(){
 						GeneralFactory.getLatestAlbumsForHomepage()
 						.then(function(albumsList){
-							// console.log(albumsList);
 							$scope.albumToDisplay.push(albumsList.data[0])
-							// console.log($scope.albumToDisplay);
 							angular.forEach(albumsList.data , function(eachAlbum){
-								// console.log(eachAlbum);
+								eachAlbum.image_path = assets_images.concat(eachAlbum.image_path); 
 								$scope.latestAlbumsList.push(eachAlbum);
 								$scope.newAlbums.push(eachAlbum);
 								return;	
@@ -25,7 +23,6 @@
 					}; 
 
 					$scope.goToSelectedAlbum = function(album_id){
-						// console.log(album_id);
 						$location.path('/album/'+album_id);
 					};
 
