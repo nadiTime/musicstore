@@ -27,9 +27,15 @@
 					};
 
 					$scope.AddToWishlist = function(album_id){
-						// console.log(album_id);
-						var al = GeneralFactory.insertIntoLS(album_id);
-						console.log(al);
+						var al = GeneralFactory.insertToObjectToLS('whishlist',album_id);
+						return;
+					};
+
+					$scope.AddToCart = function(album_id,amount){
+						if(typeof amount == 'undefined'){
+							var amount = 1;
+						}
+						var al = GeneralFactory.insertToObjectToLS('cart',album_id,amount);
 						return;
 					};
 

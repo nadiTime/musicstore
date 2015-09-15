@@ -25,11 +25,11 @@
 				return true;
 			},
 			getFromLS : function(name){
-				var albums_obj = JSON.parse(localStorage.getItem(name));
-				if (albums_obj == null) {
-					var albums_obj = [];
+				var retrievedData = localStorage.getItem(name);
+				var data = [];
+				if (retrievedData != null) {
+					data = JSON.parse(retrievedData);
 				} 
-				var data = JSON.parse(retrievedData);
 				return data;
 			},
 			insertToObjectToLS : function(name,id,amount){
@@ -49,7 +49,7 @@
 						return true;
 					}	
 				}
-			}
+			},
 
 			DeleteFromObj : function(){}
 
