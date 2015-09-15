@@ -7,8 +7,8 @@
 		$routeProvider.when("/login",
 			{
 			  templateUrl: "client/scripts/login_createaccount_page/loginLogoutView.html",
-			  controller: "HomepageController",
-			  controllerAs: "hvm"
+			  controller: "LoginController",
+			  controllerAs: "lc"
 			}
 		);
 	})
