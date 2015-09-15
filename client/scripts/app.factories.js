@@ -48,11 +48,9 @@
 							albums : [],
 							amount : []
 						};
-						LS.albums.push(id);
-						LS.amount.push(amount);
 					}
 					var new_album = false;
-					for (var i =0; i<LS.albums.length; i++){
+					for (var i = 0; i<LS.albums.length; i++){
 						if (LS.albums[i] == id) {
 							LS.amount[i] += amount;
 							new_album = true;
