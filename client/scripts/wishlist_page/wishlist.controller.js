@@ -7,8 +7,9 @@
 				$scope.wishlist = [];
 
 				var init = function(){
-					var albums_id_obj = GeneralFactory.getFromLS();
-					// console.log(albums_id_obj);
+					var assets_images = '/musicstore/assets/images/';
+					var albums_id_obj = GeneralFactory.getFromLS('wishlist');
+					console.log(albums_id_obj);
 					var arr = [];
 					angular.forEach(albums_id_obj, function(el){
 						arr.push(el);
@@ -17,7 +18,7 @@
 					WishlistFactory.getWishlist(arr)
 					.then(function(res_albums_obj){
 						angular.forEach(res_albums_obj , function(album){
-							console.log(album);
+							album.image_path = assets_images.concat(album.image_path);
 							$scope.wishlist.push(album);
 						});
 					});

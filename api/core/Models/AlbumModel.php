@@ -151,21 +151,28 @@ class AlbumModel extends Model {
 				images_to_albums AS i_t_a
 				WHERE a.album_id = i_t_a.image_id
 				AND i.image_id = i_t_a.image_id
-				AND (";
+				AND ";
 		$array_count = count($array);
-		$i = 0;
-		if($array_count < 0){
+		if($array_count == 0){
 			apiConf::$ERROR = 'no ids found';
 		}
 		else{
-			foreach ($array as $value) {
-				$i++;
-				$query .= "a.album_id='$value'";
-				if($i < $array_count){
-					$query .= " OR ";
-				}
+			if($array_count == 1){
+				$id = $array[0];
+				$query .= "a.album_id='$id'";
 			}
-			$query .= ")";
+			else{
+				$i = 0;
+				$query .= "(";
+				foreach ($array as $value) {
+					$i++;
+					$query .= "a.album_id='$value'";
+					if($i < $array_count){
+						$query .= " OR ";
+					}
+				}
+				$query .= ")";
+			}
 			$results = $this->query($query);
 			$results_count = count($results); 
 			if ( $results_count > 0 ) {

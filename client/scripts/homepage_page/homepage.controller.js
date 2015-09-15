@@ -27,7 +27,7 @@
 					};
 
 					$scope.AddToWishlist = function(album_id){
-						var al = GeneralFactory.insertToObjectToLS('whishlist',album_id);
+						var al = GeneralFactory.insertToObjectToLS('wishlist',album_id);
 						return;
 					};
 

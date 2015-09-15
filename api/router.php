@@ -46,7 +46,7 @@ $app->get('/album/songs/:id', function( $id ) use ( $send, $album ) {
 	$send($album->RCgetSongsInAlbumById($id));
 });
 
-$app->post('/album/', function( $id ) use ( $send, $album ) {
+$app->post('/album/', function() use ( $send, $album, $app ) {
 	$send($album->RCgetAlbumsByids($app->request->getBody()));
 });
 
