@@ -2,35 +2,19 @@
 	'use strict';
 
 	angular.module('musicstore.login-logout')
-		.controller('LoginController' , ['$scope', 'GeneralFactory', function($scope,GeneralFactory){
+		.controller('LoginController' , ['$scope', 'md5','GeneralFactory', 'LoginFactory',  function($scope,md5,GeneralFactory,LoginFactory){
 			$scope.login_email = '';
 			$scope.login_password = '';
 			$scope.loginUser = function(){
 				var email = $scope.login_email;
 				var password = $scope.login_password;
-				var valid = false;
-				console.log(email);
-				if(email.length > 0){
-					if(!GeneralFactory.Validate.email(email)){
-						valid = false;
-						alert('invalid email');
-					} 
+				if(LoginFactory.handleForm(email,password,GeneralFactory)){
+					LoginFactory.loginUser(email,password,md5)
+					.then(function(data){
+						console.log(data);
+					});
 				}
-				if(password.length > 0){
-					if(GeneralFactory.Validate.password(password) == 'length'){
-						valid = false;
-						alert('password must be between 8 to 16 chars');
-					}
-					 else if(GeneralFactory.Validate.password(password) == 'alphanum'){
-						valid = false;
-						alert('password must be alphanum');
-					}
-				}
-				if(valid){
-					console.log('hi');
-				}
-			}
-
+			}	
 			$scope.details = {};
 	
 			$scope.email = {

@@ -1,1 +1,1 @@
-angular.module('musicstore.login-logout' , []);
+angular.module('musicstore.login-logout' , ['angular-md5']);

@@ -34,16 +34,19 @@ class UserModel extends Model {
 			if (isset($results[0])) {
 				$this->activateUser($results[0]['user_id']);
 				Config::$USER_VERIFIED = true;
-				$arr = array();
-				$arr['user'] = $results[0];
-				$arr['auth'] = Config::$USER_AUTH;
-				$arr['success'] = true;
+				$array = array();
+				$array['user'] = $results[0];
+				$array['auth'] = Config::$USER_AUTH;
+				$array['success'] = true;
 				$this->_db->close();
-				return $arr;
+				return $array;
 			}
 			$this->_db->close();
 			apiConf::$ERROR = 'non existing user';
+			return $arr;
 		}
+		var_dump(apiConf::$ERROR);
+		return $arr;
 	}
 	/**
 	 * login facebook user.
