@@ -374,7 +374,11 @@ button#create-account {
 	width: 100%;
 	margin: 0 auto;
 }
-.login-or-create-p{
+.checkout-p{
 	background-color: white;
 	padding: 5px;
+	width: 75%;
+    margin: 0px auto;
+    font-size: 25px;
+    font-weight: bold;
 }
