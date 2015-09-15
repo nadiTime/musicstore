@@ -20,8 +20,8 @@
 				<div class="row"> 
 					<i>{{new.album_name}} - {{new.album_artist}}</i>
 					<p>{{new.album_price | currency}}</p>
-					<i class="fa fa-shopping-cart"></i>
-					<i class="fa fa-info"></i>
+					<p ng-click="addToCart(new.album_id)"><i class="fa fa-shopping-cart"></i></p>
+					<p><i class="fa fa-info"></i></p>
 				</div>
 			</div>
 			<div class="album-center-ad">

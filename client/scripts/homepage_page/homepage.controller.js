@@ -26,16 +26,17 @@
 						$location.path('/album/'+album_id);
 					};
 
-					$scope.AddToWishlist = function(album_id){
+					$scope.addToWishlist = function(album_id){
 						var al = GeneralFactory.insertToObjectToLS('wishlist',album_id);
 						return;
 					};
 
-					$scope.AddToCart = function(album_id,amount){
+					$scope.addToCart = function(album_id,amount){
 						if(typeof amount == 'undefined'){
 							var amount = 1;
 						}
 						var al = GeneralFactory.insertToObjectToLS('cart',album_id,amount);
+						// console.log(al);
 						return;
 					};
 

@@ -43,8 +43,25 @@
 				}
 				else{
 					//cart
-					LS.album_id.push(id);
-					LS.amount.push(amount);
+					if (LS.length == 0 ) {
+						LS = {
+							albums : [],
+							amount : []
+						};
+						LS.albums.push(id);
+						LS.amount.push(amount);
+					}
+					var new_album = false;
+					for (var i =0; i<LS.albums.length; i++){
+						if (LS.albums[i] == id) {
+							LS.amount[i] += amount;
+							new_album = true;
+						} 
+					}
+					if (!new_album) {
+						LS.albums.push(id);
+						LS.amount.push(amount);			
+					};
 					if(this.insertIntoLS(LS,name)){
 						return true;
 					}	
