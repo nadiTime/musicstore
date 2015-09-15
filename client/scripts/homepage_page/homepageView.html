@@ -1,0 +1,43 @@
+<div>
+	<ms-header></ms-header>
+	<ms-navbar></ms-navbar>
+	<div class="latest-hits" ng-repeat="album in latestAlbumsList">
+		<img ng-src="{{album.image_path}}" ng-click="goToSelectedAlbum(album.album_id)">
+		<div class="box-info">
+			<p class="album-name" ng-bind="album.album_artist"></p>
+			<p class="album-price">{{album.album_price | currency}}</p>	
+		</div>
+		<button ng-click="AddToWishlist(album.album_id)">wishlist</button>
+	</div>
+	<div id="content">
+		<div>
+		<ms-categorylist></ms-categorylist>	
+		</div>
+		<p id="heading-new">New Products</p>
+		<div class="album-inner">
+			<div class="new-albums" ng-repeat="new in newAlbums">
+				<img ng-src="{{new.image_path}}" ng-click="goToSelectedAlbum(new.album_id)">
+				<div class="row"> 
+					<i>{{new.album_name}} - {{new.album_artist}}</i>
+					<p>{{new.album_price | currency}}</p>
+					<i class="fa fa-shopping-cart"></i>
+					<i class="fa fa-info"></i>
+				</div>
+			</div>
+			<div class="album-center-ad">
+				<div class="album-ad" ng-repeat="a in albumToDisplay">
+					<img ng-src="{{a.image_path}}">
+					<div class="center-ad-info">
+						<h1 ng-bind="a.album_name"></h1>
+						<p ng-bind="a.album_description"></p>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="album-side-ad">
+			
+		</div>
+		<p id="heading-specials">Specials</p>
+	</div>
+	<ms-footer></ms-footer>
+</div>

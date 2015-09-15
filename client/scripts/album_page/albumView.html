@@ -1,0 +1,23 @@
+<ms-header></ms-header>
+<ms-navbar></ms-navbar>
+<div>
+	<ms-categorylist></ms-categorylist>
+	<div>
+		<img height="100px;" ng-src="{{album_image_path}}">
+		<h2>{{album_name}} ({{album_release_year}})</h2>
+		<p>Availability : <strong><span ng-bind="album_stock"></span></strong></p>
+		<p><span ng-bind="album_description"></span></p>
+		<p>Artist : <strong><span ng-bind="album_artist"></span></strong></p>
+		<p>Price : {{album_price | currency}}</p>
+		<p><span ng-bind="album_long_description"></span></p>
+		<hr>
+		<button ng-click="AddToWishlist(album_id)">Add To Wishlist</button>
+	</div>
+	<button ng-model="album_id" ng-click="getSongsByAlbumId(album_id)">Check Album Songs !</button>
+	<div>
+		<ul ng-repeat="song in songsInAlbum">
+			<li ng-bind="song.song_name"></li>
+			<li ng-bind="song.song_duration"></li>
+		</ul>
+	</div>
+</div>
