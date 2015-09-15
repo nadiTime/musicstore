@@ -66,7 +66,23 @@
 				}
 			},
 
-			DeleteFromObj : function(){}
+			DeleteFromObj : function(){},
+
+			Validate : {
+				email : function(email){
+				    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+				    return re.test(email);
+				},
+				password : function(password){
+					if(password.length < 8 || password.length > 8){
+						return 'length';
+					}
+					var re = /^[a-z0-9]+$/i;
+					if(!re.test(password)){
+						return 'alphanum';
+					}
+				}
+			}
 
 		};
 	}]);

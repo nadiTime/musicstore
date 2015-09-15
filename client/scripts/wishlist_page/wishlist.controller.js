@@ -5,16 +5,10 @@
 		.controller('WishlistController' , ['$scope' , 'GeneralFactory' , 'WishlistFactory' ,
 			function($scope,GeneralFactory,WishlistFactory){
 				$scope.wishlist = [];
-
 				var init = function(){
-					var assets_images = '/musicstore/assets/images/';
-					var albums_id_obj = GeneralFactory.getFromLS('wishlist');
-					console.log(albums_id_obj);
-					var arr = [];
-					angular.forEach(albums_id_obj, function(el){
-						arr.push(el);
-					});
-					// console.log(arr);
+				var assets_images = '/musicstore/assets/images/';
+				var arr = GeneralFactory.getFromLS('wishlist');
+				if( arr.length > 0){
 					WishlistFactory.getWishlist(arr)
 					.then(function(res_albums_obj){
 						angular.forEach(res_albums_obj , function(album){
@@ -23,8 +17,10 @@
 						});
 					});
 				}
-
-
-				init();
-			}]);
+				else{
+					//display page for empty wishlist
+				}
+			}
+			init();
+		}]);
 })();

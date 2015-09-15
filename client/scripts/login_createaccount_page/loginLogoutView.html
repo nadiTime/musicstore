@@ -36,11 +36,11 @@
 			<hr>
 			<span>If you have an account with us, please log in.</span>
 			<p>Email Address<span class="req">*</span></p>
-			<input id="user_email" type="email">
+			<input id="user_email" ng-model="login_email" type="text">
 			<p>Password<span class="req">*</span></p>
-			<input id="user_pass" type="password">
+			<input id="user_pass" ng-model="login_password" type="password">
 			<div>
-				<button id="register_user">Login</button>
+				<button id="register_user" ng-click="loginUser()">Login</button>
 				<i class="req">* Required Fields</i>
 			</div>
 		</div>
