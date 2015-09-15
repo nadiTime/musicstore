@@ -27,7 +27,7 @@
 					}
 				}
 				if(valid){
-
+					console.log('hi');
 				}
 			}
 
