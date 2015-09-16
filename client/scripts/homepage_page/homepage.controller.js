@@ -20,27 +20,25 @@
 								return;	
 							});
 						});
-					}; 
+					}
 
 					$scope.goToSelectedAlbum = function(album_id){
 						$location.path('/album/'+album_id);
-					};
+					}
 
 					$scope.addToWishlist = function(album_id){
 						var al = GeneralFactory.insertToObjectToLS('wishlist',album_id);
 						return;
-					};
+					}
 
 					$scope.addToCart = function(album_id,amount){
 						var real_amount = amount;
 						if(typeof amount == 'undefined'){
 							real_amount = 1;
 						}
-						var al = GeneralFactory.insertToObjectToLS('cart',album_id,amount);
-						// console.log(al);
+						var al = GeneralFactory.insertToObjectToLS('cart',album_id,real_amount);
 						return;
-					};
-
+					}
 					init();
-       			}]);
+   			}]);
 })();

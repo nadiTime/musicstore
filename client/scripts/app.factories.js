@@ -46,7 +46,7 @@
 					}
 				}
 				else{
-					
+					console.log(name,id,amount);
 					//cart
 					if(amount == 0){
 						amount = 1;
@@ -62,7 +62,12 @@
 							if (LS.albums[i] == id) {
 								LS.amount[i] += amount;
 								new_album = false;
-							} 
+								break;
+							}
+						}
+						if(new_album){
+							LS.albums.push(id);
+							LS.amount.push(amount);
 						}
 					}	
 				}

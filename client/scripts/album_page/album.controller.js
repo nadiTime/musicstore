@@ -17,7 +17,7 @@
 					$scope.album_description = response.data.album_description;
 					$scope.album_long_description = response.data.album_long_description;
 					$scope.album_stock = response.data.album_stock;
-					$scope.album_image_path = response.data.image_path;
+					$scope.album_image_path = '/musicstore/assets/images/' + response.data.image_path;
 					$scope.album_release_year = response.data.album_release_year;
 				});
 			};

@@ -382,3 +382,11 @@ button#create-account {
     font-size: 25px;
     font-weight: bold;
 }
+
+#cart_logo{
+	color: #ffffff;
+	font-size: 18px;
+	position: relative;
+  left: -22px;
+  top: -16px;
+}
