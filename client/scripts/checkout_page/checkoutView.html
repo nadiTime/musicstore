@@ -42,7 +42,13 @@
 					<p>Credit Card Number<span class="req"> *</span></p>
 					<input ng-model="card_number" type="text">
 					<p>Expiration Date<span class="req"> *</span></p>
-					<input ng-model="card_exp_date" type="date">
+					<select ng-model="card_exp_date">
+						<option ng-repeat="month in months" ng-bind="month" value="{{month}}"></option>
+					</select>
+					<select>
+						<option ng-repeat="year in years" ng-bind="year" value="{{year}}"></option>
+					</select>
+					<p>{{year}}</p>
 					<button  ng-click="cardInfoSubmit()">Continue</button>
 				</div>
 				<i ng-show="pay==2" class="req">* Required Fields</i>
