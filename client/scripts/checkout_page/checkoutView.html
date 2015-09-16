@@ -3,5 +3,50 @@
 	<ms-navbar></ms-navbar>
 	<div id="content">
 		<p class="checkout-p">Checkout</p>
+		<div class="accordion-wrapper" ng-init="accordion=1">
+			<h3 class="accordion" ng-class="{active:accordion==1}">
+				<a href ng-click="accordion = 1">Billing Information</a>
+			</h3>
+			<div class="accordion-content" ng-show="accordion==1">
+				<div class="bill-info">
+					<p>Address<span class="req"> *</span></p>
+					<input ng-model="bill_address" type="text" id="user_address">
+					<p>City<span class="req"> *</span></p>
+					<input ng-model="bill_city" type="text" id="user_city">
+					<p>Zip/Postal Code<span class="req"> *</span></p>
+					<input ng-model="bill_zipcode" type="text" pattern="^\d{5}(?:[-\s]\d{4})?$">
+					<p>Telephone<span class="req"> *</span></p>
+					<input ng-model="bill_tel" type="text" pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/">
+					<button  ng-click="fetchInfo()">Continue</button>
+				</div>
+				<i class="req">* Required Fields</i>
+			</div>
+
+			<h3 class="accordion" ng-class="{active:accordion==2}">
+				<a href ng-click="accordion = 2">Payment Method</a>
+			</h3>
+			<div class="accordion-content" ng-show="accordion==2">
+				<input type="radio" name="payment-method" ng-click="pay = 1" ng-init="pay = 1" checked="checked" value="check">Check / Money order<br>
+				<input type="radio" name="payment-method" ng-click="pay = 2" value="credit">Credit Card
+				<div ng-show="pay==2" class="card-info">
+					<p>Name On card<span class="req"> *</span></p>
+					<input ng-model="card_holder" type="text" id="user_address">
+					<p>Credit Card Type<span class="req"> *</span></p>
+					<input ng-model="card_type" type="text" id="user_city">
+					<p>Credit Card Number<span class="req"> *</span></p>
+					<input ng-model="card_number" type="text" pattern="^\d{5}(?:[-\s]\d{4})?$">
+					<p>Expiration Date<span class="req"> *</span></p>
+					<input ng-model="card_exp_date" type="text" pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/">
+					<button  ng-click="fetchInfo()">Continue</button>
+				</div>
+				<i ng-show="pay==2" class="req">* Required Fields</i>
+			</div>
+
+			<h3 class="accordion" ng-class="{active:accordion==3}">
+				<a href ng-click="accordion = 3">Section 3</a>
+			</h3>
+			<p class="accordion-content" ng-show="accordion==3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+		</div>
 	</div>
+	<ms-footer></ms-footer>
 </div>
