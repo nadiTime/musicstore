@@ -14,16 +14,16 @@
 					<p>City<span class="req"> *</span></p>
 					<input ng-model="bill_city" type="text" id="user_city">
 					<p>Zip/Postal Code<span class="req"> *</span></p>
-					<input ng-model="bill_zipcode" type="text" pattern="^\d{5}(?:[-\s]\d{4})?$">
+					<input ng-model="bill_zipcode" type="text">
 					<p>Telephone<span class="req"> *</span></p>
-					<input ng-model="bill_tel" type="text" pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/">
-					<button  ng-click="fetchInfo()">Continue</button>
+					<input ng-model="bill_tel" type="text">
+					<button  ng-click="billingInfoSubmit()">Continue</button>
 				</div>
 				<i class="req">* Required Fields</i>
 			</div>
 
 			<h3 class="accordion" ng-class="{active:accordion==2}">
-				<a href ng-click="accordion = 2">Payment Method</a>
+				<a href >Payment Method</a>
 			</h3>
 			<div class="accordion-content" ng-show="accordion==2">
 				<input type="radio" name="payment-method" ng-click="pay = 1" ng-init="pay = 1" checked="checked" value="check">Check / Money order<br>
@@ -32,12 +32,18 @@
 					<p>Name On card<span class="req"> *</span></p>
 					<input ng-model="card_holder" type="text" id="user_address">
 					<p>Credit Card Type<span class="req"> *</span></p>
-					<input ng-model="card_type" type="text" id="user_city">
+					<!-- <input  type="text" id="user_city"> -->
+					<select ng-model="card_type.single_select">
+						<option value="Visa">Visa</option>
+						<option value="MasterCard">Master Card</option>
+						<option value="American Express">American Express</option>
+						<option value="Diners">Diners</option>
+					</select>
 					<p>Credit Card Number<span class="req"> *</span></p>
-					<input ng-model="card_number" type="text" pattern="^\d{5}(?:[-\s]\d{4})?$">
+					<input ng-model="card_number" type="text">
 					<p>Expiration Date<span class="req"> *</span></p>
-					<input ng-model="card_exp_date" type="text" pattern="/^\+(?:[0-9] ?){6,14}[0-9]$/">
-					<button  ng-click="fetchInfo()">Continue</button>
+					<input ng-model="card_exp_date" type="date">
+					<button  ng-click="cardInfoSubmit()">Continue</button>
 				</div>
 				<i ng-show="pay==2" class="req">* Required Fields</i>
 			</div>

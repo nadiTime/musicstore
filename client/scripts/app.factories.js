@@ -81,6 +81,30 @@
 					if(!re.test(password)){
 						return 'alphanum';
 					}
+				},
+				inputt : function(input){
+					console.log(input);
+					if (input.length == 0 ) {
+						return false;
+					}
+					return input;
+				},
+				creditCard : function(card_num,card_type){
+					if (card_type == 'Visa') {
+						var re = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+						return re.test(card_num);
+					}else if (card_type == 'Master Card'){
+						var re = /^(?:5[1-5][0-9]{14})$/;
+						return re.test(card_num);
+					}else if(card_type == 'American Express'){
+						var re = /^(?:3[47][0-9]{13})$/;
+						return re.test(card_num);
+					}else if(card_type == 'Diners'){
+						var re = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
+						return re.test(card_num);
+					}else{
+						return false;
+					}
 				}
 			}
 
