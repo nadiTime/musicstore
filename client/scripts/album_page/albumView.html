@@ -12,6 +12,7 @@
 		<p><span ng-bind="album_long_description"></span></p>
 		<hr>
 		<button ng-click="AddToWishlist(album_id)">Add To Wishlist</button>
+		<button ng-click="AddToCart(album_id)">Add To Cart</button><input type="number" ng-model="add_amount"/>
 	</div>
 	<button ng-model="album_id" ng-click="getSongsByAlbumId(album_id)">Check Album Songs !</button>
 	<div>

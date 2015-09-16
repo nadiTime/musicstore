@@ -5,7 +5,7 @@
 
 			$scope.album_id = $routeParams.album_id;
 			$scope.songsInAlbum = [];
-
+			$scope.add_amount = 0;
 			var getAlbumById = function(album_id){
 				// console.log(album_id);
 				AlbumFactory.getAlbumById(album_id)
@@ -23,11 +23,9 @@
 			};
 
 			$scope.getSongsByAlbumId = function(album_id){
-				// console.log(album_id);
 				AlbumFactory.getSongsByAlbumId(album_id)
 				.then(function(response){
 					angular.forEach(response , function(song){
-						console.log(song); 
 						$scope.songsInAlbum.push(song);
 						return;
 					});
@@ -35,13 +33,13 @@
 			};
 
 			$scope.AddToWishlist = function(album_id){
-				console.log(album_id);
-				GeneralFactory.insertIntoLS(album_id)
-				.then(function(response){
-					console.log(response);
-					return;
-				});
-			};
+					GeneralFactory.insertToObjectToLS('wishlist', album_id);
+			}
+
+			$scope.AddToCart = function(album_id){
+					amount = $scope.add_amount;
+					GeneralFactory.insertToObjectToLS('cart', album_id,amount);
+			}
 
 			getAlbumById($scope.album_id);
 

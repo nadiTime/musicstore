@@ -34,36 +34,39 @@
 			},
 			insertToObjectToLS : function(name,id,amount){
 				var LS = this.getFromLS(name);
+				var new_album = true;
 				if(typeof amount == 'undefined'){
-					//whishlist
-					LS.push(id);
-					if(this.insertIntoLS(LS,name)){
-						return true;
+					for (var i = 0; i<LS.length; i++){
+						if (LS[i] == id) {
+							new_album = false;
+						} 
+					}
+					if (new_album) {
+						LS.push(id);
 					}
 				}
 				else{
+					
 					//cart
+					if(amount == 0){
+						amount = 1;
+					}
+					
 					if (LS.length == 0 ) {
-						LS = {
-							albums : [],
-							amount : []
-						};
+							LS = {}
+							LS.albums = [id];
+							LS.amount = [amount];
 					}
-					var new_album = false;
-					for (var i = 0; i<LS.albums.length; i++){
-						if (LS.albums[i] == id) {
-							LS.amount[i] += amount;
-							new_album = true;
-						} 
-					}
-					if (!new_album) {
-						LS.albums.push(id);
-						LS.amount.push(amount);			
-					};
-					if(this.insertIntoLS(LS,name)){
-						return true;
+					else{
+						for (var i = 0; i<LS.albums.length; i++){
+							if (LS.albums[i] == id) {
+								LS.amount[i] += amount;
+								new_album = false;
+							} 
+						}
 					}	
 				}
+				this.insertIntoLS(LS,name);
 			},
 
 			DeleteFromObj : function(){},
