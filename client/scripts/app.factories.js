@@ -83,8 +83,7 @@
 					}
 				},
 				inputt : function(input){
-					console.log(input);
-					if (input.length == 0 ) {
+					if (!input) {
 						return false;
 					}
 					return input;
@@ -93,14 +92,14 @@
 					if (card_type == 'Visa') {
 						var re = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
 						return re.test(card_num);
-					}else if (card_type == 'Master Card'){
+					}else if (card_type == 'MasterCard'){
 						var re = /^(?:5[1-5][0-9]{14})$/;
 						return re.test(card_num);
 					}else if(card_type == 'American Express'){
 						var re = /^(?:3[47][0-9]{13})$/;
 						return re.test(card_num);
 					}else if(card_type == 'Diners'){
-						var re = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
+						var re = /^(3(?:0[0-5]|[68][0-9])[0-9]{11})*$/;
 						return re.test(card_num);
 					}else{
 						return false;

@@ -42,22 +42,45 @@
 					<p>Credit Card Number<span class="req"> *</span></p>
 					<input ng-model="card_number" type="text">
 					<p>Expiration Date<span class="req"> *</span></p>
-					<select ng-model="card_exp_date">
+					<select ng-model="card_exp_y">
 						<option ng-repeat="month in months" ng-bind="month" value="{{month}}"></option>
 					</select>
-					<select>
+					<select ng-model="card_exp_m">
 						<option ng-repeat="year in years" ng-bind="year" value="{{year}}"></option>
 					</select>
-					<p>{{year}}</p>
-					<button  ng-click="cardInfoSubmit()">Continue</button>
+					<p>Card Verification Code<span class="req"> *</span></p>
+					<input type="text" ng-model="card_cvc">
 				</div>
+				<button  ng-click="cardInfoSubmit(pay)">Continue</button>
 				<i ng-show="pay==2" class="req">* Required Fields</i>
 			</div>
 
 			<h3 class="accordion" ng-class="{active:accordion==3}">
-				<a href ng-click="accordion = 3">Section 3</a>
+				<a href ng-click="accordion = 3">Order Review</a>
 			</h3>
-			<p class="accordion-content" ng-show="accordion==3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+			<div class="accordion-content" ng-show="accordion==3">
+				<div class="final-stage-order">
+					<table border="5" width="100%"  cellpadding="10" cellspacing="3">
+						<tr>
+						  <th align="left">Product Name</th>
+						  <th>Price</th>
+						  <th>Qty</th>
+						  <th>Subtotal</th>
+						</tr>
+						<tr align="center" ng-repeat="album in ordered_albums">
+						  <td align="left">{{album.album_name}} - {{album.album_artist}}</td>
+						  <td ng-bind="">{{album.album_price | currency}}</td>
+						  <td></td>
+						  <td>{{album.album_price | currency}}</td>
+						</tr>
+						<tr>
+							<th align="right" colspan="3">Total</th>
+							<td></td>
+						</tr>
+					</table>
+					<button  ng-click="billingInfoSubmit()">Place Order</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<ms-footer></ms-footer>

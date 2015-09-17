@@ -409,3 +409,11 @@ h3.accordion{
     margin-top: -20px;
     cursor: pointer;
 }
+.card-info + button{
+	padding: 10px;
+    background-color: black;
+    color: white;
+    float: right;
+    margin-top: -20px;
+    cursor: pointer;
+}
