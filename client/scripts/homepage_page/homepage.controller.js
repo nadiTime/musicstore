@@ -3,8 +3,8 @@
 
     angular
         .module('musicstore.homepage')
-        	.controller('HomepageController', ['$scope' , '$location' , 'GeneralFactory' ,  
-        		function ($scope , $location , GeneralFactory){
+        	.controller('HomepageController', ['$rootScope','$scope' , '$location' , 'GeneralFactory' ,  
+        		function ($rootScope, $scope , $location , GeneralFactory){
         			$scope.latestAlbumsList = [];
         			$scope.newAlbums = [];
         			$scope.albumToDisplay = [];

@@ -3,7 +3,7 @@
 	
 	angular.module('musicstore.factory', [])
 
-	.factory('GeneralFactory' ,  [ '$http' ,  function($http){
+	.factory('GeneralFactory' ,  [ '$http' ,'$rootScope',  function($http,$rootScope){
 		return {
 
 		   /* getAlbumsForHomepage
@@ -69,7 +69,8 @@
 							LS.albums.push(id);
 							LS.amount.push(amount);
 						}
-					}	
+					}
+					$rootScope.cart_amount += amount;	
 				}
 				this.insertIntoLS(LS,name);
 			},
