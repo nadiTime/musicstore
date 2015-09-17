@@ -417,3 +417,10 @@ h3.accordion{
     margin-top: -20px;
     cursor: pointer;
 }
+#cart_logo{
+	color: #ffffff;
+	font-size: 18px;
+	position: relative;
+  left: -22px;
+  top: -16px;
+}

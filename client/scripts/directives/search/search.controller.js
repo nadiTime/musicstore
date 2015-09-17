@@ -3,10 +3,19 @@
 
 	angular.module('musicstore.search')
 
-	.controller('SearchController' , ['$scope' , '$location' , '$rootScope', 'SearchFactory' ,
-	 function($scope , $location , $rootScope , SearchFactory){
+	.controller('SearchController', ['$scope' , '$location' , '$rootScope', 'SearchFactory','GeneralFactory',
+	 function($scope , $location , $rootScope , SearchFactory, GeneralFactory){
 		$scope.searchInput = '';
 		$scope.search_query_results = [];
+		$rootScope.cart_amount = 0;
+		var init = function(){
+			var amount = GeneralFactory.getFromLS('cart');
+			if(typeof amount == 'object'){
+				for(var i = 0; i< amount.amount.length; i++){
+					$rootScope.cart_amount += amount.amount[i];
+				}
+			}
+		}
 		
 
 
@@ -31,5 +40,6 @@
 			}
 			return;
 		});
-	}]);		
+		init();
+	}]);	
 })();

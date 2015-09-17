@@ -8,7 +8,7 @@
 
 				getOrders : function(data){
 					var baseUrl = 'api/router.php';
-					var data = {'user_id' : };
+					//var data = {'user_id' : };
 					var promise = $http.post(baseUrl+'/order/checkout' , data )
 				}
 			}
