@@ -17,8 +17,9 @@ $order = new OrderRestController();
 
 $send = function($data) use ($app) {
 	if ( apiConf::$ERROR != '' ) {
-		$app->response()->status( 400 );
-		$app->response()->header( 'X-Status-Reason', apiConf::$ERROR );
+		$app->halt(400,apiConf::$ERROR);
+		//$app->response->setStatus( 400 );
+		//$app->response->write(apiConf::$ERROR );
 	}
 	else{
 		echo $data;

@@ -2,16 +2,38 @@
 	'use strict';
 
 	angular.module('musicstore.login-logout')
-		.controller('LoginController' , ['$scope', 'md5','GeneralFactory', 'LoginFactory',  function($scope,md5,GeneralFactory,LoginFactory){
+		.controller('LoginController' , ['$timeout','$rootScope','$scope','$location', 'md5','GeneralFactory', 'LoginFactory',  function($timeout,$rootScope,$scope,$location,md5,GeneralFactory,LoginFactory){
 			$scope.login_email = '';
 			$scope.login_password = '';
+			$scope.logged = {
+				success : false,
+				faild : false
+			}
 			$scope.loginUser = function(){
 				var email = $scope.login_email;
 				var password = $scope.login_password;
 				if(LoginFactory.handleForm(email,password,GeneralFactory)){
 					LoginFactory.loginUser(email,password,md5)
-					.then(function(data){
-						console.log(data);
+					.then(function(response){
+						if(response.status == 200){
+								var data = response.data;
+								$rootScope.user_id = data.user.user_id;
+								$rootScope.user_auth = data.auth;
+								$rootScope.user_firstname = data.user.user_firstname;
+								$rootScope.user_lastname = data.user.user_lastname;
+								$rootScope.user_email = $scope.login_email;
+								$rootScope.user_logged = true;
+								$scope.logged.success = true;
+								$timeout(function(){
+									$location.path('/');
+								},3000);
+						}
+						else{
+							$scope.logged.fail = true;
+							$timeout(function(){
+									$scope.logged.fail = false;
+							},3000);
+						}
 					});
 				}
 			}	

@@ -41,12 +41,8 @@ class UserModel extends Model {
 				$this->_db->close();
 				return $array;
 			}
-			$this->_db->close();
 			apiConf::$ERROR = 'non existing user';
-			return $arr;
 		}
-		var_dump(apiConf::$ERROR);
-		return $arr;
 	}
 	/**
 	 * login facebook user.

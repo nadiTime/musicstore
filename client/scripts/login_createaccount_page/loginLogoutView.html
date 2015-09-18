@@ -1,6 +1,16 @@
 <div>
 	<ms-header></ms-header>
 	<ms-navbar></ms-navbar>
+		<div class="full-screen success" ng-show="logged.success">
+		<div class="container">
+			<p>welcome back <span ng-bind="user_firstname"></span></p>
+		</div>
+	</div>
+	<div class="full-screen error" ng-show="logged.fail">
+		<div class="container">
+			<p>user not registered</p>
+		</div>
+	</div>
 	<div id="content">
 		<p class="login-or-create-p">Login Or Create an Account</p>
 	<div id="box" ng-show="box.active">
@@ -36,15 +46,14 @@
 			<hr>
 			<span>If you have an account with us, please log in.</span>
 			<p>Email Address<span class="req">*</span></p>
-			<input id="user_email" ng-model="login_email" type="text">
+			<input id="user_email" ng-model="login_email" type="text" required>
 			<p>Password<span class="req">*</span></p>
-			<input id="user_pass" ng-model="login_password" type="password">
+			<input id="user_pass" ng-model="login_password" type="password" required>
 			<div>
 				<button id="register_user" ng-click="loginUser()">Login</button>
 				<i class="req">* Required Fields</i>
 			</div>
 		</div>
-	</div>
 	</div>
 	<ms-footer></ms-footer>
 </div>
