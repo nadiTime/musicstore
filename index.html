@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="client/style/angular-backtop.css">
 	<link rel="stylesheet" type="text/css" href="client/style/main.css">
 </head>
-<body >
+<body ng-controller="MusicstoreController">
 	<div class="mainView" ng-view></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
@@ -15,8 +15,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 	<script src="client/scripts/vendors/angular.md5.js"></script>
 	<script src="client/scripts/app.module.js"></script>
-	<script src="client/scripts/app.controller.js"></script>
 	<script src="client/scripts/app.factories.js"></script>
+	<script src="client/scripts/app.controller.js"></script>
 	<script src="client/scripts/angular-backtop.min.js"></script>
 	<script src="client/scripts/directives/navbar/navbar.module.js"></script>
 	<script src="client/scripts/homepage_page/homepage.module.js"></script>
@@ -48,6 +48,7 @@
 	<script src="client/scripts/checkout_page/checkout.route.js"></script>
 	<script src="client/scripts/login_createaccount_page/login-logout.route.js"></script>
 	<script src="client/scripts/myAccount_page/myaccount.route.js"></script>
+	<script src="client/scripts/myAccount_page/myaccount.controller.js"></script>
 	<script src="client/scripts/wishlist_page/wishlist.route.js"></script>
 	<script src="client/scripts/directives/breadcrumbs/breadcrumbs.directive.js"></script>
 	<script src="client/scripts/directives/cart_list/cartlist.directive.js"></script>

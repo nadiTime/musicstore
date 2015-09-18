@@ -24,6 +24,13 @@
 								$rootScope.user_email = $scope.login_email;
 								$rootScope.user_logged = true;
 								$scope.logged.success = true;
+								localStorage.setItem('ms-user',JSON.stringify({'firstname': data.user.user_firstname,
+																														'lastname': data.user.user_lastname,
+																														'email': $scope.login_email,
+																														'user_logged': true,
+																														'auth': data.auth,
+																														'user_id':data.user.user_id
+ 																														}));
 								$timeout(function(){
 									$location.path('/');
 								},3000);
