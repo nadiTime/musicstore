@@ -1,9 +1,13 @@
 body {
+	height:100%;
 	margin: 0px;
 	padding: 0px;
 	background :  rgb(237, 237, 237);
 	min-width: 100%;
 	min-height: 100%;
+}
+html{
+	height:100%;
 }
 #nav { background: white; }
 #nav a { text-decoration: none; color : black; }
@@ -97,13 +101,14 @@ body {
 .active {
 	background : black; 
 }
+
+.footer-container{
+	width: 100%;
+}
 .footer{
 	background: grey;
 	width: 100%;
-	bottom: 0;
-	/*height: 50px;*/
 	color: white;
-	margin-top: 150px;
 	opacity: 0.8;
 	display: -webkit-inline-box;
 }
@@ -424,7 +429,10 @@ h3.accordion{
   left: -22px;
   top: -16px;
 }
-
+.mainView{
+		min-height:100%;
+		position:relative;
+}
 .full-screen{
 	z-index:1000;
   position: absolute;

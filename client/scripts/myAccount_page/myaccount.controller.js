@@ -5,7 +5,6 @@
 		.controller('AccountController' , ['$rootScope','$scope',
 			function($rootScope,$scope){
 				$scope.header_message = '';
-				console.log($rootScope);
 				var init = function(){
 					if(!$rootScope.user_logged){
 						$scope.header_message = 'Please log in';
