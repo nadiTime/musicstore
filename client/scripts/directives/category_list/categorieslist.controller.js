@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular.module('categoriesListModule')
-		.controller('CategorylistController' , [ '$scope', '$rootScope' ,'CategorylistFactory' , function($scope , $rootScope , CategorylistFactory){
+		.controller('CategorylistController' , [ '$scope', '$rootScope' ,'$location','CategorylistFactory' , function($scope , $rootScope,$location , CategorylistFactory){
 			$scope.categoryListObj = [];	
 
 			var init = function(){
@@ -16,11 +16,11 @@
 			}; 
 
 			$scope.MarkRequestedCategory = function(id){
-				// console.log(id);
 				$rootScope.activeCategory = id;
-				console.log($rootScope.activeCategory);
 			};
-
+			$scope.goToSelectedCategory = function(category_id){
+				$location.path('/category/'+ category_id);
+			}
 			init();
 		}]);	
 })();

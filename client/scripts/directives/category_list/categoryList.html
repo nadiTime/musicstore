@@ -1,6 +1,6 @@
 <div class="category-wrapper">
 	<ul class="cat-ul">
-		<li ng-repeat="category in categoryListObj" ng-class="{active : category.genre_id==activeCategory}" class="catgory"><a href="javascript:void(0);" ng-bind="category.genre_name" ng-click="MarkRequestedCategory(category.genre_id)"></a></li>
+		<li ng-repeat="category in categoryListObj" ng-class="{active : category.genre_id==activeCategory}" class="catgory"><a href="javascript:void(0);" ng-bind="category.genre_name" ng-click="MarkRequestedCategory(category.genre_id); goToSelectedCategory(category.genre_id)"></a></li>
 	</ul>
 </div>
 

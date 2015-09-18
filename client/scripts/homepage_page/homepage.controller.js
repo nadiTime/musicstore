@@ -23,7 +23,7 @@
 					}
 
 					$scope.goToSelectedAlbum = function(album_id){
-						$location.path('/album/'+album_id);
+						$location.path('/album/'+ album_id);
 					}
 
 					$scope.addToWishlist = function(album_id){

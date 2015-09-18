@@ -1,3 +1,24 @@
 <div>
-	category view
+	<ms-header></ms-header>
+	<ms-navbar></ms-navbar>
+	<ms-categorylist></ms-categorylist>
+	<div id="content">
+	<div ng-show="showAlbums">
+		<span ng-bind="category_name"></span> (<span ng-bind="items_count"></span> items)
+		<div id="albums-in-category">	
+			<div class="albums" ng-repeat="album in albumsToDisplay">
+				<img ng-src="{{album.image_path}}" ng-click="goToSelectedAlbum(album.album_id)">
+				<div class="row"> 
+					<i>{{album.album_name}} - {{album.album_artist}}</i>
+					<p>{{album.album_price | currency}}</p>
+					<p ng-click="addToCart(new.album_id)"><i class="fa fa-shopping-cart"></i></p>
+					<p><i class="fa fa-info"></i></p>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div ng-show="noAlbums">
+		<h1>No albums in this category</h1>
+	</div>	
+	</div>
 </div>

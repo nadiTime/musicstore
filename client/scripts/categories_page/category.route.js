@@ -1,13 +1,11 @@
 (function(){
 	"use strict";
-
 	angular.module("musicstore.category")
-
 	.config(function($routeProvider){
-		$routeProvider.when("/category",
+		$routeProvider.when("/category/:category_id",
 			{
 			  templateUrl: "client/scripts/categories_page/categoryView.html",
-			  controller: "HomepageController",
+			  controller: "CategoryController",
 			  controllerAs: "hvm"
 			}
 		);
