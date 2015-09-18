@@ -11,8 +11,9 @@
 				$rootScope.user_email = '';
 				$rootScope.user_logged = false;
 			 	var	init = function(){
-					var user = JSON.parse(localStorage.getItem('ms-user'));
-					if(user != null){
+			 		var user = localStorage.getItem('ms-user');
+					if(user.length > 0){
+						var user = JSON.parse(user);
 						$rootScope.user_id = user.user_id;
 						$rootScope.user_auth = user.auth;
 						$rootScope.user_firstname = user.firstname;

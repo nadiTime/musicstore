@@ -16,7 +16,6 @@
 			var init = function(){
 				CategoryFactory.getAlbumsInCategory(category_id)
 				.then(function(albumsList){
-					console.log(albumsList);
 					if(albumsList.data.data.length > 0){
 						$scope.showAlbums = true;
 						$scope.category_name = albumsList.data.data[0].genre_name;

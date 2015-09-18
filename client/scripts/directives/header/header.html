@@ -3,5 +3,6 @@
   <span class="nav-icon"><a href="#account">My Account</a></span>
   <span class="nav-icon"><a href="#wishlist">My Wishlist</a></span>
   <span class="nav-icon"><a href="#checkout">Checkout</a></span>
-  <span class="nav-icon"><a href="#login">Login</a></span> <!-- else Logout -->
+  <span ng-show="user_not_logged" class="nav-icon"><a href="#login">Login</a></span> 
+  <span ng-show="user_logged" class="nav-icon"><a href="javscript:void(0);" ng-click="logUserOut();">Logout</a></span> 
 </nav>
