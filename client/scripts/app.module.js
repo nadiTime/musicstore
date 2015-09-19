@@ -13,7 +13,8 @@
 		'musicstore.account',
 		'musicstore.wishlist',
 		'musicstore.directives',
-		'musicstore.factory'
+		'musicstore.factory',
+		'facebook'
 	 ]);
 })();
 

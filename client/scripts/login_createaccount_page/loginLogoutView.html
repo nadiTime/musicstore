@@ -48,6 +48,10 @@
 				<hr>
 				<p>By creating an account with out store, you will be able to move through the checkout process faster, store multiple shipping address, view and track your orders in your account and more.</p>
 				<button ng-click="box.active=true" id="create-account">Create An Account</button>
+        <button type="button" ng-click="loginFB()" ng-hide="isLoggedIn" class="btn btn-default navbar-btn">
+                Login with facebook
+          </button>
+          <div id="fb-root"></div>
 			</div>
 		</div>
 		<div class="reg-user-box">

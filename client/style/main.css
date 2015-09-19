@@ -1,4 +1,5 @@
 body {
+	font-family: sans-serif;
 	height:100%;
 	margin: 0px;
 	padding: 0px;
@@ -9,8 +10,18 @@ body {
 html{
 	height:100%;
 }
-#nav { background: white; }
-#nav a { text-decoration: none; color : black; }
+#nav { 
+	background: white;
+	padding-left: 189px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  font-weight: bold;
+ }
+
+#nav a {
+ 	text-decoration: none;
+  color : black;
+}
 .nav-icon {
 	margin : 0px 15px 10px 15px;
 }
@@ -52,19 +63,19 @@ html{
 	color: black;
 	font-size: 50px;
 }
-.latest-hits img {
-	position: relative;
-	height: 200px;
-	width: 100%;
-	float: left;
+.latest-hits .img-container {
+	height: 100%;
 }
-.latest-hits .biggest img{
-	height: 400px;
-	width: 40%;
+
+.latest-hits img{
+	width:100%;
+	height: 100%;
 }
-.latest-hits { 
-	width: 25%;
+.latest-hits {
+	height: 50%;
+	width: 16%; 
 	float: left;
+	overflow: hidden;
 }
 .latest-hits .hits-ul{ 
 	list-style-type: none;
@@ -134,8 +145,17 @@ html{
 	margin: 0px;
 }
 .box-info{
-	border-bottom: 1px solid white;
-	border-top: 1px solid white; 
+	background-color: black;
+	opacity: 0.8;
+	width: 134%;
+  position: relative;
+  top: 0px;
+  transition: top 0.5s;
+  height: 127px;
+}
+
+.show-box{
+	top: -143px;
 }
 .new-albums{
     margin: 0 auto;
@@ -414,10 +434,11 @@ h3.accordion{
 }
 #cart_logo{
 	color: #ffffff;
-	font-size: 18px;
+	font-size: 15px;
+	font-weight: bold;
 	position: relative;
-  left: -22px;
-  top: -16px;
+	left: -28px;
+	top: -16px;
 }
 .mainView{
 		min-height:100%;
@@ -450,4 +471,25 @@ h3.accordion{
 }
 .albums{	
 	float: left;
+}
+
+#album_search {
+	position: relative;
+	top: -6px;
+}
+
+#latest-albums-container {
+	width: 1320px;
+	height: 440px;
+	padding: 0px 10px;
+}
+
+.latest-hits:first-child {
+	width:33.33%;
+	height: 100%;
+}
+
+.wishlist-button{
+	width: 10px;
+	background-image: url(../../assets/images/wishlist.png);
 }
