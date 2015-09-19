@@ -30,14 +30,11 @@
 
 				var init = function(){
 					$scope.cart = GeneralFactory.getFromLS('cart');
+					console.log($scope.cart);
 					angular.forEach($scope.cart.albums , function(eachAlbumId){
 						AlbumFactory.getAlbumById(eachAlbumId)
 						.then(function(response){
-							$scope.album_price = response.data.album_price;
-							$scope.album_name = response.data.album_name;
-							$scope.album_artist = response.data.album_artist;
-							$scope.ordered_albums.push(data);
-							console.log($scope.ordered_albums);
+							$scope.ordered_albums.push(response.data);
 						});
 					});
 				}; 
@@ -84,9 +81,8 @@
 					$scope.details.push(card_type,card_holder,$scope.card_number,card_cvc);
 					console.log($scope.details);
 					$scope.accordion += 1;
-
-
 				}
+
 
 				init();
 		}]);

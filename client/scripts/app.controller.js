@@ -22,6 +22,6 @@
 						$rootScope.user_logged = user.user_logged;
 					}
 				}
-				init();
+				// init();
 		}]);
 })();

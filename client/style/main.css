@@ -403,6 +403,14 @@ h3.accordion{
     padding: 10px;
     margin: 1px 0;
 }
+.final-stage-order > button{
+	padding: 10px;
+    background-color: black;
+    color: white;
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
 .accordion-wrapper{
 	margin-top: 30px;
 }
@@ -458,6 +466,6 @@ h3.accordion{
 	color: black;
 	font-weight: 700;
 }
-#albums-in-category{
-	
+.albums{	
+	float: left;
 }
