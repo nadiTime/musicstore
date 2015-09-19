@@ -13,11 +13,17 @@
 			}
 			var init = function(){
 				var cart = GeneralFactory.getFromLS('cart');
+<<<<<<< HEAD
+				console.log(cart);
 				if(typeof cart != 'null'){
 					var albums_obj = cart.albums;
 					CheckoutFactory.getAlbums(albums_obj)
+=======
+				var albums_obj = cart.albums;
+				CheckoutFactory.getAlbums(albums_obj)
+>>>>>>> 10fb331f3aa4cfbce63d1c6720fd74795f50b99e
 					.then(function(response){
-
+						console.log(response);
 						var amount_for_album = 0;
 						var i = 0;
 						var image_path = 'assets/images/';
@@ -30,7 +36,6 @@
 						$scope.cart = response;	
 					});	
 				}
-
 			}		
 			init();
 		}]);

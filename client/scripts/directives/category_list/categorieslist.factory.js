@@ -9,7 +9,6 @@
 				var baseUrl = 'api/router.php';
 				var promise = $http.get(baseUrl+"/category/")
 				.then(function (response) {
-		        	// console.log(response.data);
 		        	return response.data;
 		        });
 		        return promise;

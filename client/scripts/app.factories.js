@@ -46,7 +46,6 @@
 					}
 				}
 				else{
-					console.log(name,id,amount);
 					//cart
 					if(amount == 0){
 						amount = 1;

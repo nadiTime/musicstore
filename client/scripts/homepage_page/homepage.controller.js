@@ -38,6 +38,5 @@
 						return;
 					}
 					init();
-					console.log($scope.newAlbums);
    			}]);
 })();

@@ -70,7 +70,6 @@
 
 				$scope.cardInfoSubmit = function(pay_method){
 					if (pay_method == 1) {
-						console.log('payment will be in check or money order');
 						$scope.accordion = $scope.accordion +1;
 						return;
 					} 
@@ -92,7 +91,6 @@
 						return;
 					}
 					$scope.details.push(card_type,card_holder,$scope.card_number,card_cvc);
-					console.log($scope.details);
 					$scope.accordion += 1;
 				}
 
@@ -117,7 +115,7 @@
 							alert('Order Completed');
 							$location.path('/');
 						},function(error){
-							console.log(error);
+							return error;
 						});	
 					}
 

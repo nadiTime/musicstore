@@ -80,7 +80,6 @@
 						$rootScope.user_email = response.email;
 						$rootScope.user_logged = true;
 						$scope.logged.success = true;
-						console.log(response);
 						var user_obj = {'firstname': response.first_name,
 														'lastname': response.last_name,
 														'email': response.email,

@@ -17,7 +17,6 @@
         	$scope.logUserOut = function(){
         		var logout = confirm('Are you sure you want to get out?');
         		if(logout){
-        			console.log(logout);
         			localStorage.removeItem('ms-user');
         			$location.path('/');
                     $scope.user_not_logged = true;

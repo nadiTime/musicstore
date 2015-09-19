@@ -14,11 +14,6 @@
 			templateUrl: "client/scripts/album_page/albumView.html",
 			controller: "AlbumController",
 			controllerAs: "alc"
-			// resolve : {
-			// 		albumById : function(AlbumFactory){
-			// 			return AlbumFactory.getAlbumById();
-			// 		}
-			// }
 		});
 	})
 })();

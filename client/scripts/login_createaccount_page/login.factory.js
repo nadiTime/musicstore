@@ -54,7 +54,6 @@
 				var urlBase = 'api/router.php';
 				var promise = $http.post(urlBase + '/user/login/', data)
 				.then(function(response){
-					console.log(response);
 					return response;
 				},
 				function(response){
@@ -69,7 +68,6 @@
 				var urlBase = 'api/router.php';
 				var promise = $http.post(urlBase + '/user/add/reg/', data)
 				.then(function(response){
-					console.log(response);
 					return response;
 				},
 				function(response){
