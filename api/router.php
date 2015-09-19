@@ -70,7 +70,7 @@ $app->post('/user/login/fb', function() use ( $app, $send, $user ) {
 	$send($user->RCloginFacebookUser($app->request->getBody()));
 });
 
-$app->post('/user/add/reg', function() use ( $app, $send, $user ) {
+$app->post('/user/add/reg/', function() use ( $app, $send, $user ) {
 	$send($user->RCaddRegUser($app->request->getBody()));
 });
 // TODO || this one

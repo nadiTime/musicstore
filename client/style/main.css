@@ -296,18 +296,11 @@ button#create-account {
 }
 
 #inner .loader {
-	background: rgba(255, 255, 255, .9) url(images/loader.gif) no-repeat center center;
+	background: rgba(255, 255, 255, .9) url(../../assets/images/loader.gif) no-repeat center center;
 	width: 300px;
 	height: 330px;
 	position: absolute;
-	/*transition: all 1s ease;*/
 }
-
-/*
-#inner .loader.ng-hide {
-	opacity: 0;
-}
-*/
 
 #box #inner {
 	width: 300px;
@@ -342,11 +335,6 @@ button#create-account {
 .form {
 	transition: all 1s linear;
 }
-
-.form.loading {
-	opacity: 0;
-}
-
 .form input {
 	font-size: 13px;
 	padding-left: 5px;
@@ -357,12 +345,6 @@ button#create-account {
 	margin-bottom: 10px;
 }
 
-.form input.loading {
-	background: #fff url(images/input-loader.gif) no-repeat 98% center;
-	background-size: 16px 16px;
-	opacity: .5;
-	outline: none;
-}
 
 .form input.valid {
 	border: 1px solid green;

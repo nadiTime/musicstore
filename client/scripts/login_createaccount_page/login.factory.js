@@ -61,6 +61,21 @@
 					return response;
 				});
 				return promise;
+			},
+
+			registerUser : function(data,md5){
+				delete data['passwordr'];
+				data.password =  md5.createHash(data.password);
+				var urlBase = 'api/router.php';
+				var promise = $http.post(urlBase + '/user/add/reg/', data)
+				.then(function(response){
+					console.log(response);
+					return response;
+				},
+				function(response){
+					return response;
+				});
+				return promise;
 			}
 		}
 	});
