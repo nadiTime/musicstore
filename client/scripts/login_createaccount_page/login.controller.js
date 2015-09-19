@@ -66,8 +66,8 @@
 			
 			$scope.sendData = function() {
 				var details = $scope.details;
-				var password = details.password;
-				var re_password = details.passwordr;
+				var password = $scope.details.password;
+				var re_password = $scope.details.passwordr;
 				if(re_password !== password){
 					alert('must repeat the same password!');
 				}

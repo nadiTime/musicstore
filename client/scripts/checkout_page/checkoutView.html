@@ -68,17 +68,17 @@
 						  <th>Subtotal</th>
 						</tr>
 						<tr align="center" ng-repeat="album in ordered_albums">
-						  <td align="left">{{album.album_name}} - {{album.album_artist}}</td>
-						  <td >{{album.album_price | currency}}</td>
-						  <td></td>
-						  <td></td>
+						  <td align="left">{{album.name}} - {{album.artist}}</td>
+						  <td>{{album.price | currency}}</td>
+						  <td>{{album.amount}}</td>
+						  <td>{{album.total | currency}}</td>
 						</tr>
 						<tr>
 							<th align="right" colspan="3">Total</th>
-							<td></td>
+							<td>{{total_price | currency}}</td>
 						</tr>
 					</table>
-					<button  ng-click="billingInfoSubmit()">Place Order</button>
+					<button  ng-click="purchaseAlbums()">Place Order</button>
 				</div>
 			</div>
 		</div>

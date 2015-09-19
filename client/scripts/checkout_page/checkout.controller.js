@@ -2,15 +2,16 @@
 	'use strict';
 
 	angular.module('musicstore.checkout')
-		.controller('CheckoutController' , ['$scope' , '$rootScope' , 'GeneralFactory' , 'AlbumFactory' , 
-			function($scope,$rootScope,GeneralFactory,AlbumFactory){
+		.controller('CheckoutController' , ['$scope' , '$rootScope' , 'GeneralFactory' , 'AlbumFactory' , 'CheckoutFactory' , 
+			function($scope,$rootScope,GeneralFactory,AlbumFactory,CheckoutFactory){
 				$scope.cart = {};
 				$scope.ordered_albums = [];
 				$scope.details = [];
 				$scope.months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
 				$scope.years = ['2016','2017','2018','2019','2020','2021'];
 				$scope.pay = '';
-				
+				$scope.total_price = 0;
+		
 
 				$scope.bill_address = '';
 				$scope.bill_city = '';
@@ -29,12 +30,25 @@
 
 
 				var init = function(){
-					$scope.cart = GeneralFactory.getFromLS('cart');
-					console.log($scope.cart);
-					angular.forEach($scope.cart.albums , function(eachAlbumId){
-						AlbumFactory.getAlbumById(eachAlbumId)
-						.then(function(response){
-							$scope.ordered_albums.push(response.data);
+					var cart = GeneralFactory.getFromLS('cart');
+					var albums_obj = cart.albums;
+					var i = 0 ;
+					CheckoutFactory.getAlbums(albums_obj)
+					.then(function(response){
+						angular.forEach(response , function(album){
+							var price = album.album_price;
+							var order_data = {
+								id : album.album_id,
+							 	name : album.album_name,
+							 	artist : album.album_artist,
+							 	amount : cart.amount[i],
+							 	price : album.album_price,
+							 	total : price*cart.amount[i]
+							}
+							$scope.ordered_albums.push(order_data);
+						});
+						angular.forEach($scope.ordered_albums , function(album){
+							$scope.total_price += album.total;
 						});
 					});
 				}; 
@@ -66,7 +80,6 @@
 					var card_cvc = GeneralFactory.Validate.inputt($scope.card_cvc);
 					var card_exp_m = $scope.card_exp_m;
 					var card_exp_y = $scope.card_exp_y;
-					console.log('h');
 					if (!card_type || !card_holder || !card_exp_m || !card_exp_y || !card_cvc) {
 						alert('one or more of the credit card details is empty');
 						return;
@@ -83,6 +96,26 @@
 					$scope.accordion += 1;
 				}
 
+				$scope.purchaseAlbums = function(){
+					var final_obj = {
+						user_auth : $rootScope.user_auth,
+						user_id : $rootScope.user_id,
+						order_shipping_city : $scope.bill_city,
+						order_shipping_address : $scope.bill_address,
+						zipcode : $scope.bill_zipcode,
+						amount : $scope.ordered_albums.amount,
+						albums : $scope.ordered_albums.id
+					};
+
+					if ($rootScope.user_logged) {
+						CheckoutFactory.getOrders(final_obj)
+						.then(function(response){
+							console.log(response);
+						});	
+					}
+
+					
+				}
 
 				init();
 		}]);
