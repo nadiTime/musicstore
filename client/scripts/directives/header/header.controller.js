@@ -18,8 +18,8 @@
         		var logout = confirm('Are you sure you want to get out?');
         		if(logout){
         			console.log(logout);
-        			localStorage.setItem('ms-user','');
-        			$location.path('/homepage/');
+        			localStorage.removeItem('ms-user');
+        			$location.path('/');
         		}
         	}
         });
