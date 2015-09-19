@@ -2,7 +2,17 @@
 	<h2>My Cart</h2>
 	<p>Ther are <span ng-bind="cart_amount"></span> items in your cart</p>
 	<hr>
-	<p>Cart Subtotal <span ng-bind="subtotal"></span></p>
+	<p>Cart Subtotal <strong><span>{{cart_subtotal | currency}}</span></strong></p>
 	<hr>
-	<button id="purchase">Checkout</button>
+	<div class="album-in-cart" ng-repeat="album in cart">
+		<div class="img-in-cart">
+			<img ng-src="{{album.image_path}}" />
+		</div>
+		<div class="details-in-cart">
+			<p ng-bind="album.album_name"></p>
+			<p ng-bind="album.album_artist"></p>
+			<p class="price-in-cart"><span ng-bind="album.amount"></span> x {{album.album_price | currency}}</p>
+		</div>
+	</div>
+	<button id="purchase" class="cart-button" ng-click="goToCheckout()">Checkout</button>
 </div>

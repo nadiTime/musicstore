@@ -556,3 +556,53 @@ h3.accordion{
   width: 1320px;
 	margin-left: 21px;
 }
+
+.cart-list{
+    position: relative;
+    top: -1172px;
+    width: 194px;
+    left: 93px;
+}
+
+.cart-list h2{
+	    background-color: white;
+    padding: 10px;
+    font-size: 19px;
+}
+
+.img-in-cart{
+	display: inline-block;
+	width:85px;
+}
+
+.img-in-cart img{
+	width: 100%;
+}
+
+.details-in-cart{
+	    display: inline-block;
+    position: relative;
+    top: -4px;
+    right: -12px;
+}
+
+.price-in-cart{
+	    font-size: 14px;
+    color: grey;
+}
+
+.cart-button{
+	padding: 10px;
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-button:hover{
+	background-color: grey;
+	color: black;
+	border:2px solid black;
+}
