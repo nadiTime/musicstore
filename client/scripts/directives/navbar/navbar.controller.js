@@ -5,7 +5,6 @@
 		var init = function(){
 			NavbarFactory.getItems()
 			.then(function(response){
-				// console.log(response);
 				return;
 			});	
 		};

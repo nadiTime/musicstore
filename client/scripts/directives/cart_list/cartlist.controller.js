@@ -10,7 +10,6 @@
 
 			var init = function(){
 				var cart = GeneralFactory.getFromLS('cart');
-				console.log(cart);
 				var albums_obj = cart.albums;
 				CheckoutFactory.getAlbums(albums_obj)
 					.then(function(response){

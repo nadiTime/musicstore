@@ -9,7 +9,6 @@
 				CategorylistFactory.getCategoryList()
 				.then(function(categoryList){
 					angular.forEach(categoryList.data , function(eachCategory){
-						// console.log(eachCategory);
 						return $scope.categoryListObj.push(eachCategory);	
 					});
 				});

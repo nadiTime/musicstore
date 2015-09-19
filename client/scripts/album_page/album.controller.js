@@ -7,7 +7,6 @@
 			$scope.songsInAlbum = [];
 			$scope.add_amount = 0;
 			var getAlbumById = function(album_id){
-				console.log(album_id);
 				AlbumFactory.getAlbumById(album_id)
 				.then(function(response){
 					$scope.album_name = response.data.album_name;
