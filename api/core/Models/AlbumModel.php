@@ -50,7 +50,7 @@ class AlbumModel extends Model {
 	public function getLatestAlbums() {
 		$query = 	"SELECT
 					a.album_id,a.album_name,a.album_artist,
-					i.image_path,i.image_title
+					i.image_path,i.image_title,a.album_price
 					FROM 
 					albums AS a,
 					images AS i,
