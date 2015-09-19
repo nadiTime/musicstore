@@ -5,6 +5,7 @@
         .module('musicstore.homepage')
         	.controller('HomepageController', ['$rootScope','$scope' , '$location' , 'GeneralFactory' ,  
         		function ($rootScope, $scope , $location , GeneralFactory){
+        			$scope.show_box = false;
         			$scope.latestAlbumsList = [];
         			$scope.newAlbums = [];
         			$scope.albumToDisplay = [];

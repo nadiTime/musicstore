@@ -1,13 +1,18 @@
 <div>
 	<ms-header></ms-header>
 	<ms-navbar></ms-navbar>
-	<div class="latest-hits" ng-repeat="album in latestAlbumsList">
-		<img ng-src="{{album.image_path}}" ng-click="goToSelectedAlbum(album.album_id)">
-		<div class="box-info">
-			<p class="album-name" ng-bind="album.album_artist"></p>
-			<p class="album-price">{{album.album_price | currency}}</p>	
-		</div>
-		<button ng-click="AddToWishlist(album.album_id)">wishlist</button>
+	<div id="latest-albums-container">
+		<div class="latest-hits" ng-mouseenter="show_box=true" ng-mouseleave="show_box=false" ng-repeat="album in latestAlbumsList">
+			<div class="img-container">
+				<img ng-src="{{album.image_path}}" ng-click="goToSelectedAlbum(album.album_id)">
+			</div>
+			<div class="box-info" ng-class="{'show-box': show_box}">
+				<p class="album-name" ng-bind="album.album_name"></p>
+				<p class="album-artist" ng-bind="album.album_artist"></p>
+				<p class="album-price">{{album.album_price | currency}}</p>	
+			</div>
+		<span class="wishlist-button" ng-click="AddToWishlist(album.album_id)"></span>
+	</div>
 	</div>
 	<div id="content">
 		<div>
