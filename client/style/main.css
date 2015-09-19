@@ -152,9 +152,13 @@ html{
 	background: black;
 	width: 75%;
 	color: white;
-	text-align: center;
 	margin: 0px;
 	float: left;
+}
+
+.album-artist{
+	color: red;
+	font-size: 1.2em;
 }
 .album-price {
 	background: black;
@@ -170,6 +174,10 @@ html{
   top: 0px;
   transition: top 0.5s;
   height: 127px;
+	text-align: left;
+	padding-left: 15px;
+	padding-top: 15px;
+	font-size: 26px;
 }
 
 .show-box{
@@ -536,4 +544,15 @@ h3.accordion{
 }
 .row:hover .new_album_price{
 	color:black;
+}
+
+.icons.latest{
+	position: relative;
+  top: -28px;
+  float:left;
+}
+
+#content_login{
+  width: 1320px;
+	margin-left: 21px;
 }

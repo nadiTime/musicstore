@@ -15,6 +15,7 @@
 							angular.forEach(albumsList.data , function(eachAlbum){
 								eachAlbum.image_path = assets_images.concat(eachAlbum.image_path); 
 								$scope.latestAlbumsList.push(eachAlbum);
+								console.log(eachAlbum);
 								$scope.newAlbums.push(eachAlbum);
 							});
 						});

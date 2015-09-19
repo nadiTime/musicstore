@@ -9,7 +9,8 @@
 			<div class="box-info" ng-class="{'show-box': show_box}">
 				<p class="album-name" ng-bind="album.album_name"></p>
 				<p class="album-artist" ng-bind="album.album_artist"></p>
-				<p class="album-price">{{album.album_price | currency}}</p>	
+					<a href="javascript:void(0);" class="icons latest" ng-click="addToCart(new.album_id)"><i class="fa fa-shopping-cart fa-2x"></i></a>
+					<a href="javascript:void(0);" class="icons latest"><i class="fa fa-info fa-2x"></i></a>
 			</div>
 		<span class="wishlist-button" ng-click="AddToWishlist(album.album_id)"></span>
 	</div>
