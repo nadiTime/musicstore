@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular.module('musicstore.login-logout')
-		.controller('LoginController' , ['$timeout','$rootScope','$scope','$location', 'md5','GeneralFactory', 'LoginFactory',  function($timeout,$rootScope,$scope,$location,md5,GeneralFactory,LoginFactory){
+		.controller('LoginController' , ['$timeout','$rootScope','$scope','$location', '$facebook','md5','GeneralFactory', 'LoginFactory',  function($timeout,$rootScope,$scope,$location,$facebook,md5,GeneralFactory,LoginFactory){
 			$scope.login_email = '';
 			$scope.login_password = '';
 			$scope.logged = {
@@ -63,7 +63,44 @@
 			$scope.rejection = {
 				active : false
 			}
-			
+			$scope.loginFB = function(){
+		    $facebook.login().then(function() {
+		      refresh();
+		    });
+		  }
+		  function refresh() {
+		    $facebook.api("/me").then( 
+		      function(response) {
+		        var facebook_auth = $facebook.getAuthResponse();
+		        $rootScope.user_id = response.id;
+						$rootScope.user_auth = facebook_auth.accessToken;
+						var signed_request = facebook_auth.accessToken.signedRequest;
+						$rootScope.user_firstname = response.first_name;
+						$rootScope.user_lastname = response.last_name;
+						$rootScope.user_email = response.email;
+						$rootScope.user_logged = true;
+						$scope.logged.success = true;
+						console.log(response);
+						var user_obj = {'firstname': response.first_name,
+														'lastname': response.last_name,
+														'email': response.email,
+														'user_logged': true,
+														'auth': facebook_auth.accessToken,
+														'user_id': response.id
+													}
+						localStorage.setItem('ms-user',JSON.stringify(user_obj));
+						$timeout(function(){
+							$location.path('/');
+						},3000);
+					},
+		      function(err) {
+		      	$scope.logged.fail = true;
+  						$timeout(function(){
+									$scope.logged.fail = false;
+							},3000);
+		      });
+		  }
+
 			$scope.sendData = function() {
 				var details = $scope.details;
 				var password = details.password;

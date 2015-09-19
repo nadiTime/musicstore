@@ -20,6 +20,8 @@
         			console.log(logout);
         			localStorage.removeItem('ms-user');
         			$location.path('/');
+                    $scope.user_not_logged = true;
+                    $scope.user_logged = false;
         		}
         	}
         });
