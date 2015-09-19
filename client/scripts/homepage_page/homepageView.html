@@ -23,25 +23,12 @@
 			<div class="new-albums" ng-repeat="new in newAlbums">
 				<img ng-src="{{new.image_path}}" ng-click="goToSelectedAlbum(new.album_id)">
 				<div class="row"> 
-					<i>{{new.album_name}} - {{new.album_artist}}</i>
-					<p>{{new.album_price | currency}}</p>
-					<p ng-click="addToCart(new.album_id)"><i class="fa fa-shopping-cart"></i></p>
-					<p><i class="fa fa-info"></i></p>
-				</div>
-			</div>
-			<div class="album-center-ad">
-				<div class="album-ad" ng-repeat="a in albumToDisplay">
-					<img ng-src="{{a.image_path}}">
-					<div class="center-ad-info">
-						<h1 ng-bind="a.album_name"></h1>
-						<p ng-bind="a.album_description"></p>	
-					</div>
+					<p class="new_album_name">{{new.album_name}} - <br />{{new.album_artist}}</p>
+					<p class="new_album_price">{{new.album_price | currency}}</p>
+					<a href="javascript:void(0);" class="icons" ng-click="addToCart(new.album_id)"><i class="fa fa-shopping-cart fa-2x"></i></a>
+					<a href="javascript:void(0);" class="icons"><i class="fa fa-info fa-2x"></i></a>
 				</div>
 			</div>
 		</div>
-		<div class="album-side-ad">
-			
-		</div>
-		<p id="heading-specials">Specials</p>
 	</div>
 </div>
