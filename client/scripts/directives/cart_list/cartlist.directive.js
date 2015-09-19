@@ -4,7 +4,7 @@
 	.directive('msCartlist' , function(){
 		return {
 			restrict : 'E',
-			templateUrl : 'scripts/directives/cart_list/cartlist.html',
+			templateUrl : 'client/scripts/directives/cart_list/cartList.html',
 			controller : 'CartlistController',
 			controllerAs : 'clc'
 		};

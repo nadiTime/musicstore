@@ -2,8 +2,8 @@
 	'use strict';
 
 	angular.module('musicstore.checkout')
-		.controller('CheckoutController' , ['$scope' , '$rootScope' , 'GeneralFactory' , 'AlbumFactory' , 'CheckoutFactory' , 
-			function($scope,$rootScope,GeneralFactory,AlbumFactory,CheckoutFactory){
+		.controller('CheckoutController' , ['$scope' , '$location' , '$rootScope' , 'GeneralFactory' , 'AlbumFactory' , 'CheckoutFactory' , 
+			function($scope,$location,$rootScope,GeneralFactory,AlbumFactory,CheckoutFactory){
 				$scope.cart = {};
 				$scope.ordered_albums = [];
 				$scope.details = [];
@@ -97,20 +97,27 @@
 				}
 
 				$scope.purchaseAlbums = function(){
+					var cart = GeneralFactory.getFromLS('cart');
+					var amount = cart.amount;
+					var albums = cart.albums;
+					
 					var final_obj = {
 						user_auth : $rootScope.user_auth,
 						user_id : $rootScope.user_id,
 						order_shipping_city : $scope.bill_city,
 						order_shipping_address : $scope.bill_address,
 						zipcode : $scope.bill_zipcode,
-						amount : $scope.ordered_albums.amount,
-						albums : $scope.ordered_albums.id
+						amount : amount,
+						albums : albums
 					};
 
 					if ($rootScope.user_logged) {
 						CheckoutFactory.getOrders(final_obj)
 						.then(function(response){
-							console.log(response);
+							alert('Order Completed');
+							$location.path('/');
+						},function(error){
+							console.log(error);
 						});	
 					}
 

@@ -10,8 +10,11 @@
 					var baseUrl = 'api/router.php';
 					var promise = $http.post(baseUrl+'/order/checkout' , data )
 					.then(function(response){
-						console.log(response);
+						return response;
+					}, function(response){
+						return response;
 					});
+					return promise;
 				},
 
 				getAlbums : function(albums_obj){

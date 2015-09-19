@@ -12,7 +12,6 @@
 				$rootScope.user_logged = false;
 			 	var	init = function(){
 			 		var user = localStorage.getItem('ms-user');
-			 		console.log(user);
 					if(user != null){
 						var user = JSON.parse(user);
 						$rootScope.user_id = user.user_id;
@@ -23,6 +22,6 @@
 						$rootScope.user_logged = user.user_logged;
 					}
 				}
-				// init();
+				init();
 		}]);
 })();
