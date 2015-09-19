@@ -84,13 +84,18 @@ html{
 	width: 100%;
 }
 #content{
-	width: 75%;
-	margin: 0px auto;
+	position: relative;
+	top: -315px;
+	right: -137px;
 }
 .category-wrapper{
 	background: rgb(253, 0, 2);
-	width: 100px;
+	position: relative;
+	font-size: 22px;
+	width: 173px;
 	color : white;
+  left: -37px;
+  top: 121px;
 }
 .category-wrapper .catgory {
 	border-bottom: 1px solid white;
@@ -172,12 +177,15 @@ html{
     margin-left: 140px;
 }
 #heading-new {
-	width: 53%;
-    background-color: white;
-    float: right;
-    margin-right: 320px;
-    margin-top: -206px;
-    padding: 5px;
+  position: relative;
+  top: -172px;
+  left: 150px;
+  font-weight: bold;
+  font-size: 26px;
+  background-color: white;
+  padding: 13px;
+  width: 700px;	
+  margin: 0px;
 }
 .row{
 	position: absolute;
