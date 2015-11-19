@@ -1,24 +1,26 @@
 <div>
 	<ms-header></ms-header>
 	<ms-navbar></ms-navbar>
-	<ms-categorylist></ms-categorylist>
-	<div id="content">
-	<div ng-show="showAlbums">
-		<span ng-bind="category_name"></span> (<span ng-bind="items_count"></span> items)
-		<div id="albums-in-category">	
-			<div class="albums" ng-repeat="album in albumsToDisplay">
-				<img ng-src="{{album.image_path}}" ng-click="goToSelectedAlbum(album.album_id)">
-				<div class="row"> 
-					<i>{{album.album_name}} - {{album.album_artist}}</i>
-					<p>{{album.album_price | currency}}</p>
-					<p ng-click="addToCart(new.album_id)"><i class="fa fa-shopping-cart"></i></p>
-					<p><i class="fa fa-info"></i></p>
-				</div>
-			</div>
-		</div>	
+	<div id="ap-category-list">
+		<ms-categorylist></ms-categorylist>
 	</div>
-	<div ng-show="noAlbums">
-		<h1>No albums in this category</h1>
-	</div>	
+	<div id="category-content">
+		<div ng-show="showAlbums">
+			<h1 ng-bind="category_name"></h1> (<span ng-bind="items_count"></span> items)
+			<div id="albums-in-category">	
+				<div class="albums" ng-repeat="album in albumsToDisplay">
+					<img ng-src="{{album.image_path}}" ng-click="goToSelectedAlbum(album.album_id)">
+					<div class="row"> 
+						<i>{{album.album_name}} - {{album.album_artist}}</i>
+						<p class="margin-bottom-1">{{album.album_price | currency}}</p>
+						<p ng-click="addToCart(new.album_id)" class="inline"><i class="fa fa-shopping-cart"></i></p>
+						<p class="inline"><i class="fa fa-info"></i></p>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div ng-show="noAlbums">
+			<h1>No albums in this category</h1>
+		</div>	
 	</div>
 </div>

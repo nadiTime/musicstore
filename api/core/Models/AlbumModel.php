@@ -28,7 +28,7 @@ class AlbumModel extends Model {
 					images_to_albums AS i_t_a,
 					albums_stock AS a_s,
 					genres_to_albums AS g
-					WHERE a.album_id = 22
+					WHERE a.album_id = '$aid'
 					AND i_t_a.album_id = a.album_id
 					AND i.image_id = i_t_a.image_id
 					AND a_s.album_id = a.album_id

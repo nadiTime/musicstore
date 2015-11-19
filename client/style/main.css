@@ -216,15 +216,18 @@ html{
 .row{
 	background-color: black;
 	position: relative;
+	color:white;
 	top: -4px;
-	width: 194px;
-  height: 118px;
-  padding-top:13px;
-  text-align: center;
+	width: 270px;
+  	height: 118px;
+  	padding-top:13px;
+  	text-align: center;
+  	font-weight: 700;
 }
 
 .row:hover{
 	background-color: red;
+	color:black;
 }
 
 .row > .fa {
@@ -501,6 +504,8 @@ h3.accordion{
 }
 .albums{	
 	float: left;
+	margin-right: 11px;
+
 }
 
 #album_search {
@@ -620,4 +625,16 @@ h3.accordion{
 
 #album-details img{
 	height: 212px;
+}
+
+#category-content{
+    margin-left: 219px;
+    margin-top: -190px;
+}
+p.inline{
+	display: inline-block;
+}
+
+.margin-bottom-1{
+	margin-bottom: 1px;
 }
