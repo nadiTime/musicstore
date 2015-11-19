@@ -1,8 +1,10 @@
 <ms-header></ms-header>
 <ms-navbar></ms-navbar>
 <div>
-	<ms-categorylist></ms-categorylist>
-	<div>
+	<div id="ap-category-list">
+		<ms-categorylist></ms-categorylist>
+	</div>
+	<div id="album-details">
 		<img height="100px;" ng-src="{{album_image_path}}">
 		<h2>{{album_name}} ({{album_release_year}})</h2>
 		<p>Availability : <strong><span ng-bind="album_stock"></span></strong></p>

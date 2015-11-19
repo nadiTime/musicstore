@@ -606,3 +606,18 @@ h3.accordion{
 	color: black;
 	border:2px solid black;
 }
+
+#ap-category-list{
+	margin-top: -310px;
+    margin-left: 70px;
+}
+
+#album-details{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -184px;
+}
+
+#album-details img{
+	height: 212px;
+}

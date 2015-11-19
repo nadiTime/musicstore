@@ -15,6 +15,9 @@
 					$rootScope.cart_amount += amount.amount[i];
 				}
 			}
+			else{
+				$rootScope.cart_amount = 0;
+			}
 		}
 		
 

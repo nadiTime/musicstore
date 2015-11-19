@@ -18,24 +18,25 @@ class AlbumModel extends Model {
  	*/
 	public function getAlbumsDetailsByAlbumId( $album_id ) {
 		$aid = $this->escapeString($album_id);
-		$query = 	"SELECT
+		$query = 	"SELECT 
 					a.album_name,a.album_artist,a.album_release_year,a.album_description,
 					a.album_long_description,a.album_created,a.album_price,
-					a_s.album_stock,i.image_path,i.image_title,g.genre_id
-					FROM 
-					albums AS a,
-					albums_stock AS a_s, 
+					i.image_path,i.image_title,
+					a_s.album_stock,g.genre_id
+					FROM albums AS a,
 					images AS i,
 					images_to_albums AS i_t_a,
+					albums_stock AS a_s,
 					genres_to_albums AS g
-					WHERE a.album_id = '$aid'
-					AND g.album_id = a.album_id
-					AND a_s.album_id = a.album_id
+					WHERE a.album_id = 22
 					AND i_t_a.album_id = a.album_id
-					AND i.image_id = i_t_a.image_id";
-		$results = $this->query($query);
-		if (isset($results[0])) {
-			$album = array('data' => $results[0],'success' => true);
+					AND i.image_id = i_t_a.image_id
+					AND a_s.album_id = a.album_id
+					AND g.album_id = a.album_id";
+		$results = $this->_db->query($query);
+		if ($results) {
+			$data = $results->fetch_assoc();
+			$album = array('data' => $data,'success' => true);
 			return $album;
 		}
 		apiConf::$ERROR = 'get album failed';
