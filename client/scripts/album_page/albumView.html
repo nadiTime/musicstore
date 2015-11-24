@@ -7,11 +7,11 @@
 	<div id="album-details">
 		<img height="100px;" ng-src="{{album_image_path}}">
 		<h2>{{album_name}} ({{album_release_year}})</h2>
-		<p>Availability : <strong><span ng-bind="album_stock"></span></strong></p>
+		<div><p>Availability : <strong><span ng-bind="album_stock"></span></strong></p>
 		<p><span ng-bind="album_description"></span></p>
 		<p>Artist : <strong><span ng-bind="album_artist"></span></strong></p>
 		<p>Price : {{album_price | currency}}</p>
-		<p><span ng-bind="album_long_description"></span></p>
+		<p><span ng-bind="album_long_description"></span></p></div>
 		<hr>
 		<button ng-click="AddToWishlist(album_id)">Add To Wishlist</button>
 		<button ng-click="AddToCart(album_id)">Add To Cart</button><input type="number" ng-model="add_amount"/>

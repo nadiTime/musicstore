@@ -561,6 +561,11 @@ h3.accordion{
   width: 1320px;
 	margin-left: 21px;
 }
+#content_checkout{
+	width: 75%;
+    margin: 0 auto;
+    margin-bottom: 2%;
+}
 
 .cart-list{
     position: relative;
@@ -637,4 +642,21 @@ p.inline{
 
 .margin-bottom-1{
 	margin-bottom: 1px;
+}
+#album-details div {
+	width:50%;
+	margin: 0 auto;
+	padding: 1%;
+	background: white;
+    border-radius: 5px;
+
+}
+.interested_wrap{
+	width: 80%;
+    margin: 0 auto;
+}
+.interested_al {
+	margin: 5px;
+	float: left;
+
 }
