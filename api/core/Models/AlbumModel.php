@@ -43,7 +43,7 @@ class AlbumModel extends Model {
 	}
 	/**
 	* getLatestAlbums
-	* 
+	* bla
  	* get 9 latest albums.
  	* 
  	* @return array $albums / array
