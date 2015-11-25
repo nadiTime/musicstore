@@ -13,9 +13,9 @@ class AlbumModel extends Model {
  	* get album details by album id.
  	* 
  	* @param  int $album_id album id.
- 	* 
+ 	* comment
  	* @return array $album / array 
- 	*/
+ 	*/ 
 	public function getAlbumsDetailsByAlbumId( $album_id ) {
 		$aid = $this->escapeString($album_id);
 		$query = 	"SELECT 
