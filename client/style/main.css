@@ -137,7 +137,9 @@ html{
 .footer{
 	background: grey;
 	width: 100%;
+	padding: 3%;
 	color: white;
+	margin-top: 2%;
 	opacity: 0.8;
 	display: -webkit-inline-box;
 }
@@ -470,7 +472,7 @@ h3.accordion{
 	font-size: 15px;
 	font-weight: bold;
 	position: relative;
-	left: -28px;
+	left: -33px;
 	top: -16px;
 }
 .mainView{
@@ -505,9 +507,10 @@ h3.accordion{
 .albums{	
 	float: left;
 	margin-right: 11px;
-
 }
-
+.albums img{	
+	width: 194px;
+}
 #album_search {
 	position: relative;
 	top: -6px;
@@ -626,10 +629,25 @@ h3.accordion{
     margin: 0 auto;
     text-align: center;
     margin-top: -184px;
+    width: 60%;
+}
+#album-details h2 {
+	text-align: left;
+}
+#album-details button {
+	display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background: black;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
 }
 
 #album-details img{
-	height: 212px;
+    height: 330px;
+    float: left;
+    margin-top: 50px;
 }
 
 #category-content{
@@ -644,19 +662,44 @@ p.inline{
 	margin-bottom: 1px;
 }
 #album-details div {
-	width:50%;
-	margin: 0 auto;
-	padding: 1%;
-	background: white;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1%;
+    height: auto;
+    background: white;
     border-radius: 5px;
+    margin-right: 0px;
+    margin-bottom: 10px;    
 
+}
+#album-details input {
+	width: 60px;
 }
 .interested_wrap{
 	width: 80%;
     margin: 0 auto;
 }
+.interested_wrap h1{
+	text-align: center;
+}
 .interested_al {
-	margin: 5px;
-	float: left;
-
+    margin: 5px;
+    float: left;
+    padding: 0;
+    width: 32%;
+    list-style: none;
+    background: white;
+    border: 1px dashed #D3BE02;
+    border-radius: 5px;
+}
+.interested_al img {
+	width: 100%;
+	border-radius: 5px;
+}
+.interested_al li {
+	padding: 2%;
+    text-align: center;
+    font-family: Tahoma;
+    font-style: oblique;
+    font-weight: bold;
 }
