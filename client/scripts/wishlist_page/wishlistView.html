@@ -1,10 +1,13 @@
 <div>
 	<ms-header></ms-header>
 	<ms-navbar></ms-navbar>
-	<ul ng-repeat="album in wishlist">
-		<img ng-src="{{album.image_path}}">
-		<li ng-bind="album.album_name"></li>
-		<li ng-bind="album.album_artist"></li>
-		<li ng-bind="album.album_price"></li>
-	</ul>
+	<div class="interested_wrap">
+		<h1>Wishlist</h1>
+		<ul class="interested_al" ng-repeat="album in wishlist">
+			<img ng-src="{{album.image_path}}">
+			<li>Album : {{album.album_name}}</li>
+			<li>Author : {{album.album_artist}}</li>
+			<li>Price : {{album.album_price}}</li>
+		</ul>
+	</div>
 </div>
